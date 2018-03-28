@@ -5,6 +5,7 @@ const bc = require('./controllers/books_controllers')
 const app  = express();
 
 app.use(bodyParser.json());  // top level middleware
+app.use(express.static(__dirname + "/../build"))
 
 app.get('/api/books', bc.read)
 
